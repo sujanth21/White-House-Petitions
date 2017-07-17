@@ -12,6 +12,7 @@
 		83ED38121F1CC1B0004DB8C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83ED38101F1CC1B0004DB8C1 /* Main.storyboard */; };
 		83ED38141F1CC1B0004DB8C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83ED38131F1CC1B0004DB8C1 /* Assets.xcassets */; };
 		83ED38171F1CC1B0004DB8C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83ED38151F1CC1B0004DB8C1 /* LaunchScreen.storyboard */; };
+		83ED381F1F1CC745004DB8C1 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ED381E1F1CC745004DB8C1 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		83ED38131F1CC1B0004DB8C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83ED38161F1CC1B0004DB8C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83ED38181F1CC1B0004DB8C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83ED381E1F1CC745004DB8C1 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				83ED38131F1CC1B0004DB8C1 /* Assets.xcassets */,
 				83ED38151F1CC1B0004DB8C1 /* LaunchScreen.storyboard */,
 				83ED38181F1CC1B0004DB8C1 /* Info.plist */,
+				83ED381E1F1CC745004DB8C1 /* SwiftyJSON.swift */,
 			);
 			path = "WhiteHouse Petitions";
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83ED381F1F1CC745004DB8C1 /* SwiftyJSON.swift in Sources */,
 				83ED380F1F1CC1B0004DB8C1 /* ViewController.swift in Sources */,
 				83ED380D1F1CC1B0004DB8C1 /* AppDelegate.swift in Sources */,
 			);

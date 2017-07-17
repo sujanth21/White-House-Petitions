@@ -10,11 +10,22 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    var petitions = [String]()
+    var petitions = [[String: String]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
+        
+        if let url = URL(string: urlString) {
+            if let data = try! Data(contentsOf: url) {
+                let json = JSON(data: data)
+                
+                if json["metadata"]["responseInfo"]["status"].intValue == 200 {
+                    
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
