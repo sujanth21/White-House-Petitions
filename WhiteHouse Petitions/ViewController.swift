@@ -18,11 +18,11 @@ class ViewController: UITableViewController {
         let urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
         
         if let url = URL(string: urlString) {
-            if let data = try! Data(contentsOf: url) {
+            if let data = try? Data(contentsOf: url) {
                 let json = JSON(data: data)
                 
                 if json["metadata"]["responseInfo"]["status"].intValue == 200 {
-                    
+                    parse(json: json)
                 }
             }
         }
@@ -43,6 +43,20 @@ class ViewController: UITableViewController {
         cell.detailTextLabel?.text = "Subtitle goes here"
         
         return cell
+    }
+    
+    func parse(json: JSON) {
+        for result in json["results"].arrayValue {
+            let title = result["title"].stringValue
+            let body = result["body"].stringValue
+            let sigs = result["signatureCount"].stringValue
+            
+            let obj = ["title": title, "body": body, "sigs": sigs]
+            petitions.append(obj)
+            
+        }
+        
+        tableView.reloadData()
     }
 
 
