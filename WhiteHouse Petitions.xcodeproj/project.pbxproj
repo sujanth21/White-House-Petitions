@@ -13,6 +13,7 @@
 		83ED38141F1CC1B0004DB8C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83ED38131F1CC1B0004DB8C1 /* Assets.xcassets */; };
 		83ED38171F1CC1B0004DB8C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83ED38151F1CC1B0004DB8C1 /* LaunchScreen.storyboard */; };
 		83ED381F1F1CC745004DB8C1 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ED381E1F1CC745004DB8C1 /* SwiftyJSON.swift */; };
+		83ED38211F1CD114004DB8C1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ED38201F1CD114004DB8C1 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		83ED38161F1CC1B0004DB8C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83ED38181F1CC1B0004DB8C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83ED381E1F1CC745004DB8C1 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		83ED38201F1CD114004DB8C1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		83ED380B1F1CC1B0004DB8C1 /* WhiteHouse Petitions */ = {
 			isa = PBXGroup;
 			children = (
+				83ED38201F1CD114004DB8C1 /* DetailViewController.swift */,
 				83ED380C1F1CC1B0004DB8C1 /* AppDelegate.swift */,
 				83ED380E1F1CC1B0004DB8C1 /* ViewController.swift */,
 				83ED38101F1CC1B0004DB8C1 /* Main.storyboard */,
@@ -143,6 +146,7 @@
 				83ED381F1F1CC745004DB8C1 /* SwiftyJSON.swift in Sources */,
 				83ED380F1F1CC1B0004DB8C1 /* ViewController.swift in Sources */,
 				83ED380D1F1CC1B0004DB8C1 /* AppDelegate.swift in Sources */,
+				83ED38211F1CD114004DB8C1 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
