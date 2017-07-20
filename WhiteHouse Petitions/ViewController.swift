@@ -15,27 +15,7 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let urlString: String
-        
-        if navigationController?.tabBarItem.tag == 0 {
-            urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
-        } else {
-            urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
-        }
-        
-        DispatchQueue.global(qos: .userInitiated).async { [ unowned self] in
-            if let url = URL(string: urlString) {
-                if let data = try? Data(contentsOf: url) {
-                    let json = JSON(data: data)
-                
-                    if json["metadata"]["responseInfo"]["status"].intValue == 200 {
-                        parse(json: json)
-                        return
-                        }
-                }
-            }
-        }
-        showError()
+        performSelector(inBackground: #selector(fetchJSON), with: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,20 +54,40 @@ class ViewController: UITableViewController {
             
         }
         
-        DispatchQueue.main.async {[ unowned self ] in
-            self.tableView.reloadData()
-        }
+        tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
     }
     
     func showError() {
-        
-        DispatchQueue.main.async { [unowned self ] in
-            let ac = UIAlertController(title: "Loading Error", message: "There was a problem loading the feed; Please check your connection and try again.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
-        }
+        let ac = UIAlertController(title: "Loading Error", message: "There was a problem loading the feed; Please check your connection and try again.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
         
     }
+    
+    func fetchJSON() {
+        
+        let urlString: String
+        
+        if navigationController?.tabBarItem.tag == 0 {
+            urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
+        } else {
+            urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
+        }
+        
+        if let url = URL(string: urlString) {
+            if let data = try? Data(contentsOf: url) {
+                let json = JSON(data: data)
+                    
+                if json["metadata"]["responseInfo"]["status"].intValue == 200 {
+                    self.parse(json: json)
+                    return
+                }
+            }
+        }
+        
+        performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
+    }
+    
 
 
 }
