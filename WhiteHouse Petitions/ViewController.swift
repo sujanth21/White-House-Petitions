@@ -74,7 +74,9 @@ class ViewController: UITableViewController {
             
         }
         
-        tableView.reloadData()
+        DispatchQueue.main.async {[ unowned self ] in
+            self.tableView.reloadData()
+        }
     }
     
     func showError() {
